@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'sinatra'
 
+require 'helpers'
+
 get '/' do
   haml :default
 end

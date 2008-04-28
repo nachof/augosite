@@ -1,6 +1,7 @@
-%html
+!!! 1.0 strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang' => 'es' }
   %head
-    %meta{ 'http-equiv' => 'Content-Type', 'content' => 'text/html; charset=UTF8' }
+    %meta{ 'http-equiv' => 'Content-Type', 'content' => 'text/html; charset=UTF-8' }
     %title Asociación Uruguaya de Go
     %link{ :rel => 'stylesheet', :type => 'text/css', :href => '/default.css' }
     / Ugly stuff follows
@@ -18,6 +19,11 @@
       %p.sitename
         %span.title ASOCIACIÓN URUGUAYA DE GO
       %p.nav
+        = make_link '/default', 'Principal', 'Página principal'
+        = make_link "/queesgo", "Qué es go?", "Descripción, reglas, breve historia"
+        = make_link "/reuniones", "Reuniones", "Reuniones para jugar y estudiar"
+        = make_link "/calendario", "Calendario", "Torneos y otros eventos importantes a nivel nacional e internacional"
+        = make_link "/contacto", "Contacto", "Envianos un mensaje"
         / Links come here
     #main
       = yield

@@ -1,0 +1,27 @@
+%html
+  %head
+    %meta{ 'http-equiv' => 'Content-Type', 'content' => 'text/html; charset=UTF8' }
+    %title Asociación Uruguaya de Go
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => '/default.css' }
+    / Ugly stuff follows
+    /[if lte IE 6]
+      %style
+        h1,* html h2,* html h3,* html h4,* html h5,* html h6{margin-bottom:0;border-bottom:0;background:url(img/dot.gif) repeat-x bottom transparent;}
+        \.current{padding:0 5px;}
+    /[if IE 7]
+      %style
+        \.current{margin:0 -10px 0 0;padding:0 5px 0 0;}
+
+%body
+  #container
+    #header
+      %p.sitename
+        %span.title ASOCIACIÓN URUGUAYA DE GO
+      %p.nav
+        / Links come here
+    #main
+      = yield
+    #footer
+      %p.footlinks
+        / Footer links come here
+        %a{ :href => '/contacto' } Comunicate

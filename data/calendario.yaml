@@ -1,0 +1,16 @@
+- title: 10 Campeonato Iberoamericano de go por internet
+  date: 2008-03-10..2008-05-12
+
+- title: Test activity
+  date: 2008-05-04..2008-05-10
+
+- title: Reunión semanal
+  description: Nos juntamos en el Nau los martes a las 19:00
+  link: /reuniones
+  date:
+    start: 2008-01-01
+    repeat:
+      every: week
+      until: 2008-12-31
+      except: 2008-03-11,2008-03-18
+

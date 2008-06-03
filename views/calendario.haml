@@ -1,0 +1,30 @@
+%h1
+  == Actividades para #{month_name(calendar.month)} #{calendar.year}
+
+- filler = capture_haml do
+  %td
+- calendar_entries = []
+- 0.upto(calendar.first_day.date.wday - 1) do |d|
+  - calendar_entries[d] = filler
+- calendar.days do |day|
+  - calendar_entries << capture_haml(day) do |d|
+    %td
+      - if d.activities.empty?
+        = d.day
+      - else
+        %strong= d.day
+%table{ :border => 2 }
+  %thead
+    %tr
+      %th D
+      %th L
+      %th M
+      %th M
+      %th J
+      %th V
+      %th S
+  %tbody 
+    - calendar_entries.in_groups_of(7, filler).each do |week|
+      %tr
+        - week.each do |d|
+          = d

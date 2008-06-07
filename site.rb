@@ -11,6 +11,10 @@ get '/img/randomheader.jpg' do
   send_file 'public/img/headers/' + (rand(7) + 1).to_s + '.jpg'
 end
 
+get '/calendario' do
+  haml :calendario
+end
+
 get '/:anypage' do
   haml params[:anypage].to_sym
 end

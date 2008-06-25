@@ -1,0 +1,112 @@
+name: Campeonato Uruguayo de Go, 2007 -- preliminar
+description: Campeonato suizo a 4 rondas. Clasificatorio para la fase final.
+rounds: 4
+
+players:
+  - &eugenia
+    ip: 2
+    name: Eugenia Ellis
+    level: ~ 
+  - &illa
+    ip: 1
+    name: Gabriel Illanes  
+    level: ~
+  - &frank
+    ip: 3
+    name: Frank
+    level: ~
+  - &alejandro
+    ip: 4
+    name: Alejandro Jarovisky
+    level: ~
+  - &juan
+    ip: 7
+    name: Juan Tomasini
+    level: ~
+  - &alvaro
+    ip: 5
+    name: Álvaro Silvera
+    level: ~
+  - &raul
+    ip: 6
+    name: Raúl Garreta
+    level: ~
+  - &pablo
+    ip: 8
+    name: Pablo
+    level: ~
+
+
+games:
+  # Primera ronda
+  - 
+    - 
+      white: *eugenia
+      black: *alvaro
+      result: W+6.5
+    - 
+      white: *frank
+      black: *raul
+      result: W+28.5
+    - 
+      white: *juan
+      black: *illa
+      result: B+R
+    - 
+      white: *alejandro
+      black: *pablo
+      result: W+R
+  # Segunda ronda
+  - 
+    -
+      white: *eugenia
+      black: *frank
+      result: W+0.5
+    -
+      white: *illa
+      black: *alejandro
+      result: W+R
+    -
+      white: *raul
+      black: *juan
+      result: B+29.5
+    -
+      white: *alvaro
+      black: *pablo
+      result: W+R
+  # Tercera ronda
+  - 
+    -
+      white: *eugenia
+      black: *illa
+      result: W+2.5
+    -
+      white: *alvaro
+      black: *alejandro
+      result: B+R
+    -
+      white: *juan
+      black: *frank
+      result: B+45.5
+    -
+      white: *raul
+      black: *pablo
+      result: B+F
+  # Cuarta ronda
+  - 
+    - 
+      white: *eugenia
+      black: *alejandro
+      result: W+6.5
+    -
+      white: *illa
+      black: *frank
+      result: W+10.5
+    -
+      white: *juan
+      black: *pablo
+      result: W+35.5
+    -
+      white: *raul
+      black: *alvaro
+      result: B+R

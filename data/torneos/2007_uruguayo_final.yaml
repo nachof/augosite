@@ -1,0 +1,117 @@
+name: Campeonato Uruguayo de Go, 2007 -- fase final
+description: Campeonato suizo a 4 rondas. 
+rounds: 6
+
+tiebreak: sodos
+
+players:
+  - &martin
+    ip: 1
+    name: Martin Benenati
+    level: ~ 
+  - &alvaro
+    ip: 2
+    name: Alvaro Rittatore
+    level: ~ 
+  - &nacho
+    ip: 3
+    name: Ignacio Facello
+    level: ~ 
+  - &eugenia
+    ip: 4
+    name: Eugenia Ellis
+    level: ~ 
+  - &illa
+    ip: 5
+    name: Gabriel Illanes  
+    level: ~
+  - &alejandro
+    ip: 6
+    name: Alejandro Jarovisky
+    level: ~
+
+games:
+  # Primera ronda
+  - 
+    - 
+      white: *alvaro
+      black: *illa
+      result: W+0.5
+    - 
+      white: *nacho
+      black: *alejandro
+      result: W+R
+    - 
+      white: *eugenia
+      black: *martin
+      result: B+R
+  # Segunda ronda
+  - 
+    -
+      white: *illa
+      black: *eugenia
+      result: W+45.5
+    -
+      white: *nacho
+      black: *martin
+      result: B+R
+    -
+      white: *alejandro
+      black: *alvaro
+      result: B+8.5
+  # Tercera ronda
+  - 
+    -
+      white: *nacho
+      black: *illa
+      result: W+25.5
+    -
+      white: *martin
+      black: *alvaro
+      result: W+16.5
+    -
+      white: *alejandro
+      black: *eugenia
+      result: W+2.5
+  # Cuarta ronda
+  - 
+    - 
+      white: *nacho
+      black: *alvaro
+      result: B+R
+    - 
+      white: *illa
+      black: *martin
+      result: B+R
+    -
+      bye: *alejandro
+    -
+      bye: *eugenia
+  # Quinta ronda
+  - 
+    - 
+      bye: *nacho
+    -
+      bye: *illa
+    -
+      white: *alvaro
+      black: *eugenia
+      result: W+23.5
+    -
+      white: *martin
+      black: *alejandro
+      result: W+R
+  # Sexta ronda
+  - 
+    -
+      white: *illa
+      black: *alejandro
+      result: W+8.5
+    -
+      white: *eugenia
+      black: *nacho
+      result: W+13.5
+    - 
+      bye: *martin
+    -
+      bye: *alvaro

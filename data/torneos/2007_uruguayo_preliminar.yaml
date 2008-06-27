@@ -2,6 +2,8 @@ name: Campeonato Uruguayo de Go, 2007 -- preliminar
 description: Campeonato suizo a 4 rondas. Clasificatorio para la fase final.
 rounds: 4
 
+tiebreak: sos, sosos
+
 players:
   - &eugenia
     ip: 2
@@ -25,11 +27,11 @@ players:
     level: ~
   - &alvaro
     ip: 5
-    name: ¡lvaro Silvera
+    name: √Ålvaro Silvera
     level: ~
   - &raul
     ip: 6
-    name: Ra˙l Garreta
+    name: Ra√∫l Garreta
     level: ~
   - &pablo
     ip: 8

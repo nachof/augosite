@@ -1,5 +1,7 @@
 --- 
 chdir: !CHANGE_ME!
+user: !CHANGE_ME!
+group: !CHANGE_ME!
 pid: tmp/pids/thin.pid
 log: log/thin.log
 port: 8010

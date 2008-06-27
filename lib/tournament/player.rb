@@ -34,6 +34,10 @@ module Tournament
       games.select(&:won?).collect(&:opponent).collect(&:score).inject(&:+)
     end
 
+    def add_bye(round)
+      @rounds[round] = Bye.new(self)
+    end
+
     # CLASS METHODS
 
     def self.add_player(player)

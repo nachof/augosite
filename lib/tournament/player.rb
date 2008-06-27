@@ -30,6 +30,10 @@ module Tournament
       games.collect(&:opponent).collect(&:sos).inject(&:+)
     end
 
+    def sodos
+      games.select(&:won?).collect(&:opponent).collect(&:score).inject(&:+)
+    end
+
     # CLASS METHODS
 
     def self.add_player(player)

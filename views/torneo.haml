@@ -1,0 +1,30 @@
+%script{:src => '/javascript/highlight.js'}
+
+%h3= tournament.name
+%br
+
+%h5 Detalles
+%p= tournament.description
+%br
+
+%h5 Resultados
+
+%p
+  %table#positionsTable
+    %tr
+      %th IP
+      %th Nombre
+      %th Puntos
+      - tournament.tiebreaks.each do |tb|
+        %th= tb.to_s.upcase
+      - 1.upto(tournament.rounds) do |rnum|
+        %th.roundinfo= "R#{rnum}"
+    - tournament.sorted_players.each do |player|
+      %tr{:id => "player_#{player.ip}"}
+        %td= player.ip
+        %td= player.name
+        %td.pointsinfo= player.score
+        - tournament.tiebreaks.each do |tb|
+          %td.pointsinfo= player.method(tb).call
+        - 1.upto(tournament.rounds) do |rnum|
+          = round_td player.rounds[rnum]

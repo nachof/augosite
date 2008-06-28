@@ -1,4 +1,6 @@
-%ul
-  - tournaments.each do |t|
-    %li
-      %a{ :href => "/torneos/#{t.id}" }= t.name
+%h1 Información sobre torneos disponible
+%p
+  %ul
+    - tournaments.each do |t|
+      %li
+        %a{ :href => "/torneos/#{t.id}" }= t.name

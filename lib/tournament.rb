@@ -20,7 +20,15 @@ module Tournament
         Game.from_raw(game_data, :round => round_number)
       end
     end
-    Base.new data['name'], :description => data['description'], :rounds=> round_number, :players => Player.all, :tiebreaks => data['tiebreak']
+    Base.new data['name'], :description => data['description'],
+                           :rounds=> round_number,
+                           :players => Player.all,
+                           :tiebreaks => data['tiebreak'],
+                           :id => tournament_id
+  end
+
+  def list
+    Dir.entries(tournaments_path).select { |f| /^.+\.yaml/.match(f) }.sort.collect { |fn| load fn.split('.')[0] }
   end
 
   def filename(tournament_id)

@@ -1,11 +1,12 @@
 module Tournament
   class Base
-    attr_accessor :rounds, :players, :tiebreaks, :description, :name
+    attr_accessor :rounds, :players, :tiebreaks, :description, :name, :id
     def initialize(name, options={})
       @name    = name
       @description = options[:description]
       @rounds  = options[:rounds]
       @players = options[:players]
+      @id = options[:id]
       @tiebreaks = (options[:tiebreaks] || "").split(',').map(&:strip).map(&:to_sym)
       @tiebreaks = [ :sos, :sosos ] if @tiebreaks.empty?
     end

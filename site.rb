@@ -8,7 +8,7 @@ get '/' do
 end
 
 get '/img/randomheader.jpg' do
-  response.headers['Cache-Control'] = "max-age=0"
+  response.headers['Cache-Control'] = "max-age=1"
   send_file 'public/img/headers/' + (rand(3) + 1).to_s + '.jpg'
 end
 

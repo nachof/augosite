@@ -1,5 +1,6 @@
 require 'lib/tournament'
 require 'lib/augo'
+require 'lib/calendar'
 
 helpers do
   def make_link(url, title, description)
@@ -20,5 +21,21 @@ helpers do
   def partial(file, options={})
     options.merge!({ :layout => false })
     haml file, options
+  end
+
+  def show_event_dates(event)
+    if event.date == event.end_date
+      readable_date event.date
+    else
+      "Del #{readable_date(event.date)} al #{readable_date(event.end_date)}."
+    end
+  end
+
+  def readable_date(date)
+    date.strftime "%d de #{months[date.month - 1]} de %Y"
+  end
+
+  def months
+    %w(enero febrero marzo abril mayo junio julio agosto setiembre octubre noviembre diciembre)
   end
 end

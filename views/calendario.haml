@@ -1,16 +1,3 @@
-%h5 Campeonato Uruguayo de Go -- Fase final
-%p
-  %a{ :href => '/torneos/2007_uruguayo_final' } Más información
+%h1 Próximos eventos
 
-%h1 Eventos internacionales
-
-%h5 29th World Amateur Go Championship
-%p 
-  28 al 31 de mayo 2008, 
-  %strong Tokyo, Japón.
-
-%h5 X Campeonato Iberoamericano de Go
-%p
-  Octubre de 2008, 
-  %strong Buenos Aires, Argentina.
-
+= partial :_lista_eventos, :locals => { :events => Calendar.future_events }

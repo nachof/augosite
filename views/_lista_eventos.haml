@@ -1,0 +1,11 @@
+
+- events.each do |event|
+  %h5= event.title
+  %p
+    = event.description
+    = show_event_dates event
+    - if event.location
+      %strong= event.location
+    - if event.link
+      %a{ :href => event.link } Más información
+

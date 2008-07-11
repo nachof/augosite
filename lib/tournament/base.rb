@@ -14,8 +14,8 @@ module Tournament
     def sorted_players
       pls = @players.to_a.collect { |key,val| val }.sort do |a,b|
         funcs = [ :score ] + @tiebreaks + [ :ip ]
-        ar_a = funcs.collect { |f| a.method(f).call }
-        ar_b = funcs.collect { |f| b.method(f).call }
+        ar_a = funcs.collect { |f| a.send(f) }
+        ar_b = funcs.collect { |f| b.send(f) }
         ar_b <=> ar_a
       end
       pls

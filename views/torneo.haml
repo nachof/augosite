@@ -25,6 +25,6 @@
         %td= player.name
         %td.pointsinfo= player.score
         - tournament.tiebreaks.each do |tb|
-          %td.pointsinfo= player.method(tb).call
+          %td.pointsinfo= player.send(tb)
         - 1.upto(tournament.rounds) do |rnum|
           = round_td player.rounds[rnum]

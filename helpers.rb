@@ -27,12 +27,17 @@ helpers do
     if event.date == event.end_date
       readable_date event.date
     else
-      "Del #{readable_date(event.date)} al #{readable_date(event.end_date)}."
+      year = event.date.year != event.end_date.year
+      month = year || (event.date.month != event.end_date.month)
+      "Del #{readable_date(event.date, year, month)} al #{readable_date(event.end_date)}."
     end
   end
 
-  def readable_date(date)
-    date.strftime "%d de #{months[date.month - 1]} de %Y"
+  def readable_date(date, year=true, month=true)
+    format = "%d"
+    format += " de #{months[date.month - 1]}" if month
+    format += " de %Y" if year
+    date.strftime format
   end
 
   def months

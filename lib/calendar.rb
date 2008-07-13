@@ -16,7 +16,7 @@ module Calendar
     end
 
     def self.future
-      list.select { |e| e.end_date > DateTime.now }
+      list.select { |e| e.date > DateTime.now }
     end
 
     def self.current

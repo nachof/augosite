@@ -19,6 +19,10 @@ module Calendar
       list.select { |e| e.end_date > DateTime.now }
     end
 
+    def self.current
+      list.select { |e| e.date < DateTime.now && e.end_date > DateTime.now }
+    end
+
     def self.from_raw(data)
       self.new data['title'], data['description'], data['link'], data['location'], data['date'], data['until']
     end
@@ -30,9 +34,14 @@ module Calendar
       end
   end
 
+  module_function
+
   def future_events
     Event.future
   end
 
-  module_function :future_events
+  def current_events
+    Event.current
+  end
+
 end

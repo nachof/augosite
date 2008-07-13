@@ -3,3 +3,7 @@
   La Asociación Uruguaya de Go, afiliada a la
   %a{ :href => 'http://intgofed.org/' } International Go Federation
   y a la Federación Iberoamericana de Go, es la asociación que nuclea y representa a los jugadores uruguayos del juego de go.
+
+- unless (current_events = Calendar.current_events).empty?
+  %h1 Qué está pasando ahora mismo?
+  = partial :_lista_eventos, :locals => { :events => current_events }

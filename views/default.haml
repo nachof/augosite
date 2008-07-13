@@ -7,3 +7,9 @@
 - unless (current_events = Calendar.current_events).empty?
   %h1 Qué está pasando ahora mismo?
   = partial :_lista_eventos, :locals => { :events => current_events }
+
+- unless (future_events = Calendar.future_events).empty?
+  %h1 Lo que se viene
+  = partial :_lista_eventos, :locals => { :events => future_events.first(2) }
+  %p
+    %a{ :href => '/calendario' } Ver calendario completo

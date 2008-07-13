@@ -30,7 +30,7 @@ module Calendar
     private
       def self.load_list
         data = YAML.load File.open(File.join(AUGO::data_path, 'calendario.yaml'))
-        data.map { |d| Event.from_raw(d) }
+        data.map { |d| Event.from_raw(d) }.sort { |a,b| a.date <=> b.date }
       end
   end
 

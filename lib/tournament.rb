@@ -12,19 +12,7 @@ module Tournament
 
   def load(tournament_id)
     data = YAML.load File.open(filename(tournament_id))
-    data['players'].each { |p| Player.new(p['ip'], p['name'], p['level']) }
-    round_number = 0
-    data['games'].each do |round|
-      round_number = round_number + 1
-      round.each do |game_data|
-        Game.from_raw(game_data, :round => round_number)
-      end
-    end
-    Base.new data['name'], :description => data['description'],
-                           :rounds=> round_number,
-                           :players => Player.all,
-                           :tiebreaks => data['tiebreak'],
-                           :id => tournament_id
+    Base.new tournament_id, data
   end
 
   def list

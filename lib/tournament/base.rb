@@ -1,14 +1,22 @@
 module Tournament
   class Base
     attr_accessor :rounds, :players, :tiebreaks, :description, :name, :id
-    def initialize(name, options={})
-      @name    = name
-      @description = options[:description]
-      @rounds  = options[:rounds]
-      @players = options[:players]
-      @id = options[:id]
-      @tiebreaks = (options[:tiebreaks] || "").split(',').map(&:strip).map(&:to_sym)
+
+    def initialize(id, data)
+      @players = Hash[*data['players'].map { |p| [p['ip'], Player.new(p['ip'], p['name'], p['level'])] }.flatten]
+      round_number = 0
+      data['games'].each do |round|
+        round_number = round_number + 1
+        round.each do |game_data|
+          Game.from_raw(game_data, :round => round_number, :tournament => self)
+        end
+      end
+      @description = data['description']
+      @rounds = round_number
+      @tiebreaks = (data['tiebreak'] || "").split(',').map(&:strip).map(&:to_sym)
       @tiebreaks = [ :sos, :sosos ] if @tiebreaks.empty?
+      @id = id
+      @name = data['name']
     end
 
     def sorted_players

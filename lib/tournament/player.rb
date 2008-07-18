@@ -6,7 +6,6 @@ module Tournament
       @ip    = ip
       @name  = name
       @level = level
-      Player.add_player(self)
     end
 
     def add_game(game)
@@ -36,21 +35,6 @@ module Tournament
 
     def add_bye(round)
       @rounds[round] = Bye.new(self)
-    end
-
-    # CLASS METHODS
-
-    def self.add_player(player)
-      @list ||= {}
-      @list[player.ip] = player
-    end
-
-    def self.[](ip)
-      @list[ip]
-    end
-
-    def self.all
-      @list
     end
   end
 end

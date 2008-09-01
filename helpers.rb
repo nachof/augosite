@@ -39,4 +39,10 @@ helpers do
   def months
     %w(enero febrero marzo abril mayo junio julio agosto setiembre octubre noviembre diciembre)
   end
+
+  def javascript(*scripts)
+    scripts.map do |s|
+      "<script src=\"/javascript/#{s.to_s}.js\" type=\"text/javascript\"></script>"
+    end
+  end
 end

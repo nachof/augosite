@@ -5,27 +5,27 @@
     %title Asociación Uruguaya de Go
     %link{ :rel => 'stylesheet', :type => 'text/css', :href => '/default.css' }
 
-%body
-  #header
-    %h1 Asociación Uruguaya de Go
-    %ul
-      %li
-        %a{ :href => '/' } Principal
-        Página principal
-      %li
-        %a{ :href => '/queesgo' } Qué es go?
-        Descripción, reglas, breve historia"
-      %li
-        %a{ :href => '/reuniones' } Reuniones
-        Reuniones para jugar y estudiar"
-      %li
-        %a{ :href => '/calendario' } Calendario
-        Torneos y otros eventos importantes a nivel nacional e internacional"
-      %li
-        %a{ :href => '/torneos' } Torneos
-        Lista de torneos, con resultados"
-      %li
-        %a{ :href => '/contacto' } Contacto
-        Envianos un mensaje"
-  #content
-    = yield
+  %body
+    #header
+      %h1 Asociación Uruguaya de Go
+      %ul
+        %li
+          %a{ :href => '/' } Principal
+          Página principal
+        %li
+          %a{ :href => '/queesgo' } Qué es go?
+          Descripción, reglas, breve historia"
+        %li
+          %a{ :href => '/reuniones' } Reuniones
+          Reuniones para jugar y estudiar"
+        %li
+          %a{ :href => '/calendario' } Calendario
+          Torneos y otros eventos importantes a nivel nacional e internacional"
+        %li
+          %a{ :href => '/torneos' } Torneos
+          Lista de torneos, con resultados"
+        %li
+          %a{ :href => '/contacto' } Contacto
+          Envianos un mensaje"
+    #content
+      = yield

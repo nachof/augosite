@@ -4,42 +4,28 @@
     %meta{ 'http-equiv' => 'Content-Type', 'content' => 'text/html; charset=UTF-8' }
     %title Asociación Uruguaya de Go
     %link{ :rel => 'stylesheet', :type => 'text/css', :href => '/default.css' }
-    / Ugly stuff follows
-    /[if lte IE 6]
-      %style
-        h1,* html h2,* html h3,* html h4,* html h5,* html h6{margin-bottom:0;border-bottom:0;background:url(img/dot.gif) repeat-x bottom transparent;}
-        \.current{padding:0 5px;}
-    /[if IE 7]
-      %style
-        \.current{margin:0 -10px 0 0;padding:0 5px 0 0;}
 
 %body
-  #container
-    #header
-      %p.sitename
-        %span.title ASOCIACIÓN URUGUAYA DE GO
-      %p.nav
-        = make_link '/', 'Principal', 'Página principal'
-        = make_link "/queesgo", "Qué es go?", "Descripción, reglas, breve historia"
-        = make_link "/reuniones", "Reuniones", "Reuniones para jugar y estudiar"
-        = make_link "/calendario", "Calendario", "Torneos y otros eventos importantes a nivel nacional e internacional"
-        = make_link "/torneos", "Torneos", "Lista de torneos, con resultados"
-        = make_link "/contacto", "Contacto", "Envianos un mensaje"
-        / Links come here
-    #main
-      = yield
-    #footer
-      %p.footlinks
-        / Footer links come here
-        %a{ :href => 'mailto:gouruguay@gmail.com' } Comunicate
-        %span.linktitle LINKS
-        %a{ :href => "http://www.intgofed.org/" } International Go Federation
-        %span.linktitle Asociaciones nacionales
-        %a{ :href => "http://www.go.org.ar/" } Asociación Argentina de Go
-        %a{ :href => "http://www.achgo.cl/" } Asociación Nacional Chilena de Go
-        %a{ :href => "http://www.igochile.cl/cms/" } Asociación Chilena de Go
-        %a{ :href => "http://www.nihonkiin.or.jp/index-e.htm" } Nihon Kiin (Japón)
-        %span.linktitle Otros
-        %a{ :href => "http://e-goismo.org/" } e-Goismo foros de go
-        %a{ :href => "http://nau64.tripod.com/" } Nau64 chess club
-
+  #header
+    %h1 Asociación Uruguaya de Go
+    %ul
+      %li
+        %a{ :href => '/' } Principal
+        Página principal
+      %li
+        %a{ :href => '/queesgo' } Qué es go?
+        Descripción, reglas, breve historia"
+      %li
+        %a{ :href => '/reuniones' } Reuniones
+        Reuniones para jugar y estudiar"
+      %li
+        %a{ :href => '/calendario' } Calendario
+        Torneos y otros eventos importantes a nivel nacional e internacional"
+      %li
+        %a{ :href => '/torneos' } Torneos
+        Lista de torneos, con resultados"
+      %li
+        %a{ :href => '/contacto' } Contacto
+        Envianos un mensaje"
+  #content
+    = yield

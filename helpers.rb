@@ -10,8 +10,8 @@ helpers do
     result = round.result.to_s
     wonlost = round.won? ? "+" : "-"
     img = ""
-    img = "<img src=\"/img/stone#{round.color}.png\" alt=\"[#{round.color}]\"/>" if round.color
-    "<td class=\"roundinfo #{tdclass}\" title=\"#{opp.name} #{result}\">#{img}#{opp.ip}#{wonlost}</td>"
+    img = "<img src=\"/img/stone#{round.color}.png\" alt=\"[#{round.color}]\"/> " unless round.color.empty?
+    "<td class=\"round #{tdclass}\" title=\"#{opp.name} #{result}\">#{img}#{opp.ip}#{wonlost}</td>"
   end
 
   def partial(file, options={})

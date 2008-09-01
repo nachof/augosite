@@ -5,21 +5,23 @@
 
 %h3 Resultados
 
-%table#positionsTable
-  %tr
-    %th IP
-    %th Nombre
-    %th Puntos
-    - tournament.tiebreaks.each do |tb|
-      %th= tb.to_s.upcase
-    - 1.upto(tournament.rounds) do |rnum|
-      %th.roundinfo= "R#{rnum}"
-  - tournament.sorted_players.each do |player|
-    %tr{:id => "player_#{player.ip}"}
-      %td= player.ip
-      %td= player.name
-      %td.pointsinfo= player.score
+%table.tournament
+  %thead
+    %tr
+      %th.name IP
+      %th.name Nombre
+      %th.points Puntos
       - tournament.tiebreaks.each do |tb|
-        %td.pointsinfo= player.send(tb)
+        %th.points= tb.to_s.upcase
       - 1.upto(tournament.rounds) do |rnum|
-        = round_td player.rounds[rnum]
+        %th.round= "R#{rnum}"
+  %tbody
+    - tournament.sorted_players.each do |player|
+      %tr.player{:id => "player_#{player.ip}"}
+        %td.ip= player.ip
+        %td.name= player.name
+        %td.points= player.score
+        - tournament.tiebreaks.each do |tb|
+          %td.points= player.send(tb)
+        - 1.upto(tournament.rounds) do |rnum|
+          = round_td player.rounds[rnum]

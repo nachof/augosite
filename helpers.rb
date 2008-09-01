@@ -3,10 +3,6 @@ require 'lib/augo'
 require 'lib/calendar'
 
 helpers do
-  def make_link(url, title, description)
-    partial :_link, :locals => { :url => url, :title => title, :description => description }
-  end
-
   def round_td(round)
     color = round.won? ? "green" : "red"
     opp = round.opponent

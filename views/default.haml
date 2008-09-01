@@ -1,4 +1,4 @@
-%h1 Asociación Uruguaya de Go
+%h2 Asociación Uruguaya de Go
 %p
   La Asociación Uruguaya de Go, afiliada a la
   %a{ :href => 'http://intgofed.org/' } International Go Federation
@@ -9,7 +9,7 @@
   = partial :_lista_eventos, :locals => { :events => current_events }
 
 - unless (future_events = Calendar.future_events).empty?
-  %h1 Lo que se viene
+  %h2 Lo que se viene
   = partial :_lista_eventos, :locals => { :events => future_events.first(2) }
   %p
     %a{ :href => '/calendario' } Ver calendario completo

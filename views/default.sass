@@ -1,5 +1,5 @@
 body
-  :background #EEE
+  :background #EFFFCC
   :font-family Helvetica, Arial
   :margin-left   auto
   :margin-right  auto
@@ -46,8 +46,29 @@ body
 // Rest of body stuff
 #content
   :position relative
-  :top -30px
+  :top -20px
   :clear both
   :padding 10px
   :padding-top 0px
   :background #DDD
+  // Titles
+  h1, h2, h3, h4, h5
+    :color #103
+  // Links
+  a
+    :color blue
+    &:hover
+      :background-color #DDA
+  // Definition lists
+  dt
+    :font-weight bold
+    :margin-top 5px
+  // Events
+  dl.events
+    dt
+      :font-size 105%
+      :margin-top 15px
+    dd.dates
+      :font-style italic
+    dd.location
+      :font-weight bold

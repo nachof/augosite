@@ -1,11 +1,11 @@
 
-- events.each do |event|
-  %h5= event.title
-  %p
-    = event.description
-    = show_event_dates event
-    - if event.location
-      %strong= event.location
+%dl.events
+  - events.each do |event|
+    %dt= event.title
+    %dd.description= event.description
+    %dd.dates= show_event_dates event
+    %dd.location= event.location
     - if event.link
-      %a{ :href => event.link } Más información
+      %dd.link
+        %a{ :href => event.link } Más información
 

@@ -3,6 +3,11 @@ require 'sinatra'
 
 require 'helpers'
 
+get '/default.css' do
+  header "Content-Type" => "text/css"
+  sass :default
+end
+
 get '/' do
   haml :default
 end

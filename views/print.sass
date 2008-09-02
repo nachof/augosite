@@ -1,0 +1,73 @@
+body
+  :background #FFF
+  :font-family Helvetica, Arial
+
+// Header stuff
+#header
+  :margin-top    20px
+  // Title
+  h1
+    :color #550
+    :padding 10px
+    :padding-bottom 15px
+    :text-align right
+  // Menu
+  ul
+    :display none
+  #clear
+    :display none
+
+// Rest of body stuff
+#content
+  :position relative
+  :top -20px
+  :clear both
+  :padding 10px
+  :padding-top 0px
+  // Titles
+  h1, h2, h3, h4, h5
+    :color #103
+  h2
+    :padding-left 5px
+    :border-bottom 1px solid #40B
+    :border-left 1px solid #40B
+  // Links
+  a
+    :color blue
+  // Definition lists
+  dt
+    :font-weight bold
+    :margin-top 5px
+  // Calendar
+  dl.events
+    :margin-top -10px
+    dt
+      :font-size 105%
+      :margin-top 15px
+    dd.dates
+      :font-style italic
+    dd.location
+      :font-weight bold
+  // Tournament
+  table.tournament
+    :font-size 85%
+    th, td
+      :padding-left  5px
+      :padding-right 5px
+    thead
+      th
+        :color #206
+      th.name
+        :text-align left
+    tbody
+      td.points
+        :text-align center
+      td.round.won
+        :color green
+      td.round.lost
+        :color red
+  // Map
+  img.map
+    :float right
+    :margin-left 30px
+    :margin-right 10px

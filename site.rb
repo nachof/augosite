@@ -3,9 +3,9 @@ require 'sinatra'
 
 require 'helpers'
 
-get '/default.css' do
+get '/:stylesheet.css' do
   header "Content-Type" => "text/css"
-  sass :default
+  sass params[:stylesheet].to_sym
 end
 
 get '/' do

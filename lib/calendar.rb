@@ -2,7 +2,7 @@ module Calendar
   class Event
     attr_accessor :title, :description, :link, :date, :end_date, :location
 
-    def initialize(title, description, link, location, date, end_date)
+    def initialize(title, description, link, location, date, end_date = nil)
       @title = title || ""
       @description = description || ""
       @location = location
@@ -16,11 +16,11 @@ module Calendar
     end
 
     def self.future
-      list.select { |e| e.date > DateTime.now }
+      list.select { |e| e.date > Time.now }
     end
 
     def self.current
-      list.select { |e| e.date < DateTime.now && e.end_date > DateTime.now }
+      list.select { |e| e.date < Time.now && e.end_date > Time.now }
     end
 
     def self.from_raw(data)

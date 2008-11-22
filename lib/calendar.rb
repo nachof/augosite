@@ -16,11 +16,11 @@ module Calendar
     end
 
     def self.future
-      list.select { |e| e.date > Time.now }
+      list.select { |e| e.date > Date.today() }
     end
 
     def self.current
-      list.select { |e| e.date < Time.now && e.end_date > Time.now }
+      list.select { |e| e.date < Date.today() && e.end_date > Date.today() }
     end
 
     def self.from_raw(data)

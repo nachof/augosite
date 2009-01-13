@@ -17,7 +17,7 @@ players:
     name: Gustavo Olaza
     ip: 4
   - &ale
-    name: Alejandro Jarowsky
+    name: Alejandro Jarovisky
     ip: 1
   - &martin
     name: Martin Benenati

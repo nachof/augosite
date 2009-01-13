@@ -14,7 +14,6 @@ module Tournament
       @description = data['description']
       @rounds = round_number
       @tiebreaks = (data['tiebreak'] || "").split(',').map(&:strip).map(&:to_sym)
-      @tiebreaks = [ :sos, :sosos ] if @tiebreaks.empty?
       @id = id
       @name = data['name']
     end

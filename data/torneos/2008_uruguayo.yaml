@@ -1,0 +1,97 @@
+name: Campeonato Uruguayo de Go, 2008
+rounds: 5
+
+tiebreak: 
+
+players:
+  - &nacho
+    name: Nacho Facello
+    ip: 2
+  - &bruno
+    name: Bruno Nicolas
+    ip: 5
+  - &alfonso
+    name: Alfonso Artigue
+    ip: 6
+  - &gustavo
+    name: Gustavo Olaza
+    ip: 4
+  - &ale
+    name: Alejandro Jarowsky
+    ip: 1
+  - &martin
+    name: Martin Benenati
+    ip: 3
+
+
+games:
+  # Primera ronda
+  - 
+    - 
+      white: *gustavo
+      black: *nacho
+      result: B+R
+    - 
+      white: *ale
+      black: *bruno
+      result: W+F
+    - 
+      white: *alfonso
+      black: *martin
+      result: B+36.5
+  # Segunda ronda
+  - 
+    - 
+      white: *nacho
+      black: *bruno
+      result: W+9.5
+    - 
+      white: *ale
+      black: *alfonso
+      result: B+R
+    - 
+      white: *martin
+      black: *gustavo
+      result: W+R
+  # Tercera ronda
+  - 
+    -
+      black: *ale
+      white: *nacho
+      result: W+10.5
+    - 
+      white: *martin
+      black: *bruno
+      result: W+R
+    - 
+      white: *alfonso
+      black: *gustavo
+      result: W+R
+  # Cuarta ronda
+  - 
+    - 
+      white: *nacho
+      black: *martin
+      result: B+20.5
+    - 
+      white: *alfonso
+      black: *bruno
+      result: W+R
+    - 
+      white: *gustavo
+      black: *ale
+      result: B+R
+  # Quinta ronda
+  - 
+    - 
+      white: *ale
+      black: *martin
+      result: B+R
+    - 
+      white: *gustavo
+      black: *bruno
+      result: B+R
+    - 
+      white: *alfonso
+      black: *nacho
+      result: W+17.5

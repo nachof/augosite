@@ -1,6 +1,4 @@
-require 'lib/tournament'
-require 'lib/augo'
-require 'lib/calendar'
+require 'lib/libs'
 
 helpers do
   def round_td(round)

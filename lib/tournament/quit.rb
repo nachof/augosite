@@ -1,14 +1,15 @@
+# Like bye, but game lost
 module Tournament
-  class Bye
+  class Quit
     attr_accessor :player
     def initialize(player)
       @player = player
     end
     def won?
-      true
+      false
     end
     def opponent
-      @op ||= Nobody.new("Bye")
+      @op ||= Nobody.new("Quit")
     end
     def result
       ""
@@ -18,3 +19,4 @@ module Tournament
     end
   end
 end
+

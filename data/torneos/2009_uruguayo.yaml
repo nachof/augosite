@@ -1,0 +1,141 @@
+name: Campeonato Uruguayo de Go, 2009
+rounds: 5
+
+tiebreak: sos
+
+players:
+  - &martin
+    name: Martin Benenati
+    ip: 1
+  - &nacho
+    name: Nacho Facello
+    ip: 2
+  - &illa
+    name: Gabriel Illanes
+    ip: 3
+  - &alfonso
+    name: Alfonso Artigue
+    ip: 4
+  - &ale
+    name: Alejandro Jarovisky
+    ip: 5
+  - &bruno
+    name: Bruno
+    ip: 6
+  - &gabriel
+    name: Gabriel
+    ip: 7
+  - &mauri
+    name: Mauricio
+    ip: 8
+  - &gustavo
+    name: Gustavo Olaza
+    ip: 9
+
+games:
+  # Primera ronda
+  - 
+    - 
+      white: *ale
+      black: *martin
+      result: B+R
+    - 
+      white: *bruno
+      black: *nacho
+      result: B+R
+    - 
+      # Verify
+      white: *alfonso
+      black: *mauri
+      result: W+R
+    - 
+      # Verify
+      white: *illa
+      black: *gabriel
+      result: W+R
+    -
+      bye: *gustavo
+  # Segunda ronda
+  - 
+    - 
+      # Verify
+      white: *alfonso
+      black: *martin
+      result: B+R
+    - 
+      white: *nacho
+      black: *gustavo
+      result: W+T
+    - 
+      white: *ale
+      black: *illa
+      result: B+7.5
+    - 
+      white: *mauri
+      black: *bruno
+      result: B+R
+    -
+      bye: *gabriel
+  # Tercera ronda
+  - 
+    - 
+      # Verify
+      white: *bruno
+      black: *martin
+      result: B+R
+    - 
+      white: *nacho
+      black: *illa
+      result: W+R
+    - 
+      # Verify
+      white: *alfonso
+      black: *gabriel
+      result: W+R
+    - 
+      white: *gustavo
+      black: *ale
+      result: B+R
+    -
+      bye: *mauri
+  # Cuarta ronda
+  -
+    -
+      white: *ale
+      black: *mauri
+      result: W+F
+    -
+      white: *nacho
+      black: *martin
+      result: B+R
+    -
+      white: *illa
+      black: *alfonso
+      result: B+R
+    -
+      white: *gustavo
+      black: *gabriel
+      result: W+R
+    -
+      bye: *bruno
+  # Quinta ronda
+  -
+    -
+      white: *gabriel
+      black: *ale
+      result: B+R
+    -
+      white: *gustavo
+      black: *bruno
+      result: B+R
+    -
+      # Verify
+      white: *martin
+      black: *illa
+      result: W+R
+    -
+      white: *alfonso
+      black: *nacho
+      result: B+3.5
+    -
+      quit: *mauri

@@ -34,7 +34,13 @@ module Tournament
     end
 
     def add_bye(round)
+      @rounds ||= {}
       @rounds[round] = Bye.new(self)
+    end
+
+    def add_quit(round)
+      @rounds ||= {}
+      @rounds[round] = Quit.new(self)
     end
   end
 end

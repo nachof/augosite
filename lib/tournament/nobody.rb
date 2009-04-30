@@ -1,12 +1,15 @@
 module Tournament
   class Nobody
-    def self.name
-      "Bye"
+    def initialize name
+      @name = name
     end
-    def self.ip
-      "Bye"
+    def name
+      @name
     end
-    def self.method_missing(name)
+    def ip
+      @name
+    end
+    def method_missing(name)
       0
     end
   end

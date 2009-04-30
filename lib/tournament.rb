@@ -5,6 +5,7 @@ require 'lib/tournament/result'
 require 'lib/tournament/player_game'
 require 'lib/tournament/base'
 require 'lib/tournament/bye'
+require 'lib/tournament/quit'
 require 'lib/tournament/nobody'
 
 module Tournament

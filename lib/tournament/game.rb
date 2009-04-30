@@ -11,15 +11,17 @@ module Tournament
 
     def self.from_raw(data, options = {})
       tournament = options[:tournament]
-      if data['bye'].nil?
+      if data['bye'].nil? && data['quit'].nil?
         black = tournament.players[data['black']['ip']]
         white = tournament.players[data['white']['ip']]
         result = Result.from_string(data['result'])
         game = new(:black => black, :white => white, :round => options[:round], :result => result)
         [white, black].each { |player| player.add_game game }
         game
-      else
+      elsif not data['bye'].nil?
         tournament.players[data['bye']['ip']].add_bye(options[:round])
+      else
+        tournament.players[data['quit']['ip']].add_quit(options[:round])
       end
     end
   end

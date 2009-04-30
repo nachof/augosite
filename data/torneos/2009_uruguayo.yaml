@@ -47,7 +47,7 @@ games:
       # Verify
       white: *alfonso
       black: *mauri
-      result: W+R
+      result: W+18.5
     - 
       # Verify
       white: *illa
@@ -91,7 +91,7 @@ games:
       # Verify
       white: *alfonso
       black: *gabriel
-      result: W+R
+      result: W+10.5
     - 
       white: *gustavo
       black: *ale

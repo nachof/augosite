@@ -1,0 +1,15 @@
+name: Test Tournament
+rounds: 1
+
+players:
+  - &test1
+    name: Test One
+    ip: 1
+  - &test2
+    name: Test Two
+    ip: 2
+games:
+  -
+    - white: *test1
+      black: *test2
+      result: W+R

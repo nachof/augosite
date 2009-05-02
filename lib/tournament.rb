@@ -15,11 +15,11 @@ module Tournament
     def initialize name, rounds
       @name = name
       @rounds = rounds
-      @players = []
+      @players = {}
     end
 
     def add_player player
-      @players << player
+      @players[player.ip] = player
     end
   end
 

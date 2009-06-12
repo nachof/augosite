@@ -1,0 +1,44 @@
+name: Test Tournament
+rounds: 3
+
+players:
+  - &test1
+    name: Test One
+    ip: 1
+  - &test2
+    name: Test Two
+    ip: 2
+  - &test3
+    name: Test Three
+    ip: 3
+  - &test4
+    name: Test Four
+    ip: 4
+  - &test5
+    name: Test Five
+    ip: 5
+games:
+  -
+    - white: *test1
+      black: *test2
+      result: W+R
+    - white: *test3
+      black: *test4
+      result: B+R
+    - bye: *test5
+  -
+    - white: *test5
+      black: *test1
+      result: B+R
+    - white: *test2
+      black: *test4
+      result: B+R
+    - bye: *test3
+  -
+    - white: *test1
+      black: *test4
+      result: W+R
+    - white: *test3
+      black: *test5
+      result: B+R
+    - quit: *test2

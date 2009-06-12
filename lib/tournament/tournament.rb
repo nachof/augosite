@@ -1,9 +1,9 @@
 module Tournament
   class Tournament
-    attr_reader :id, :name, :description, :rounds, :players
+    attr_reader :id, :name, :description, :rounds, :players, :tiebreaks
 
     def self.load raw, id
-      tournament = Tournament.new id, raw['name'], raw['description'], raw['rounds']
+      tournament = Tournament.new id, raw['name'], raw['description'], tbparts(raw['tiebreak']), raw['rounds']
       raw['players'].each { |praw| tournament.add_player Player.load(praw) }
       raw['games'].each do |round|
         round.each do |game|
@@ -21,10 +21,15 @@ module Tournament
       tournament
     end
 
-    def initialize id, name, description, rounds
+    def self.tbparts tiebreaks
+      (tiebreaks || '').split(',').map(&:to_sym)
+    end
+
+    def initialize id, name, description, tiebreaks, rounds
       @id          = id
       @name        = name
       @description = description
+      @tiebreaks   = tiebreaks
       @rounds      = rounds
       @players     = {}
     end

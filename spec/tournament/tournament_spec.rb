@@ -20,6 +20,7 @@ describe 'Tournament' do
         @tournament.name.should == 'Test Tournament'
         @tournament.rounds.should == 1
         @tournament.players.should have(2).elements
+        @tournament.tiebreaks.should == []
       end
 
       it "should give the correct score" do
@@ -39,6 +40,7 @@ describe 'Tournament' do
         @tournament.rounds.should == 3
         @tournament.players.should have(5).elements
         @tournament.description.should == "This is a test tournament."
+        @tournament.tiebreaks.should == [:sos, :sosos]
       end
 
       it "should give the correct score" do

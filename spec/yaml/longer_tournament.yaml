@@ -1,4 +1,5 @@
 name: Test Tournament
+tiebreak: sos,sosos
 description: This is a test tournament.
 rounds: 3
 

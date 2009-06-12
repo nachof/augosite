@@ -7,7 +7,15 @@ module Tournament
       raw['players'].each { |praw| tournament.add_player Player.load(praw) }
       raw['games'].each do |round|
         round.each do |game|
-          tournament.players[game['white']['ip']].score += 1
+          if game['white'].nil?
+            unless game['bye'].nil?
+              tournament.players[game['bye']['ip']].score += 1
+            end
+          else
+            winner = game['result'].split('+')[0]
+            tournament.players[game['white']['ip']].score += 1 if winner == 'W'
+            tournament.players[game['black']['ip']].score += 1 if winner == 'B'
+          end
         end
       end
       tournament

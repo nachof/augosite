@@ -26,7 +26,7 @@ get '/torneos/:tournament_id' do
 end
 
 get '/torneos' do
-  haml :torneos, :locals => { :tournaments => Tournament::list }
+  haml :torneos, :locals => { :tournaments => Tournament.load_dir(AUGO.data_path('torneos')) }
 end
 
 get '/:anypage' do

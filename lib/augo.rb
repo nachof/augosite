@@ -1,7 +1,7 @@
 module AUGO
   module_function
 
-  def data_path
-    File.join(File.dirname(__FILE__), '..', 'data')
+  def data_path what=''
+    File.join(File.dirname(__FILE__), '..', 'data', what)
   end
 end

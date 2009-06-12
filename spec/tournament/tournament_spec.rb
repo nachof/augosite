@@ -1,14 +1,22 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
 describe 'Tournament' do
+  describe 'list all tournaments' do
+    it "should return a list of all the tournaments" do
+      tournament_dir = File.join(File.dirname(__FILE__), '..', 'yaml')
+      Tournament.list(tournament_dir).should == ['longer_tournament.yaml', 'simple_tournament.yaml']
+    end
+  end
+
   describe 'data loading' do
     describe 'two player tournament, one round' do
       before do
         @simple = File.read File.join(TEST_FILES_DIR, 'simple_tournament.yaml')
-        @tournament = Tournament.load @simple
+        @tournament = Tournament.load @simple, 'simple'
       end
 
       it "should load the data" do
+        @tournament.id.should == 'simple'
         @tournament.name.should == 'Test Tournament'
         @tournament.rounds.should == 1
         @tournament.players.should have(2).elements
@@ -21,11 +29,12 @@ describe 'Tournament' do
     end
     describe 'five players player tournament, five rounds' do
       before do
-        @simple = File.read File.join(TEST_FILES_DIR, 'longer_tournament.yaml')
-        @tournament = Tournament.load @simple
+        @longer = File.read File.join(TEST_FILES_DIR, 'longer_tournament.yaml')
+        @tournament = Tournament.load @longer, 'longer'
       end
 
       it "should load the data" do
+        @tournament.id.should == 'longer'
         @tournament.name.should == 'Test Tournament'
         @tournament.rounds.should == 3
         @tournament.players.should have(5).elements

@@ -5,7 +5,7 @@ describe 'Player' do
     describe 'two player tournament, one round' do
       before do
         @simple = File.read File.join(TEST_FILES_DIR, 'simple_tournament.yaml')
-        @tournament = Tournament.load @simple
+        @tournament = Tournament.load @simple, 'simple'
       end
 
       it "should load the data" do

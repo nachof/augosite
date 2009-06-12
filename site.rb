@@ -22,7 +22,7 @@ get '/calendario' do
 end
 
 get '/torneos/:tournament_id' do
-  haml :torneo, :locals => { :tournament => Tournament::load(params[:tournament_id]) }
+  haml :torneo, :locals => { :tournament => Tournament.load_from_file(File.join(AUGO.data_path('torneos'), "#{params[:tournament_id]}.yaml")) }
 end
 
 get '/torneos' do

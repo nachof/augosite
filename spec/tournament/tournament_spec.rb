@@ -14,7 +14,10 @@ describe 'Tournament' do
         @tournament.players.should have(2).elements
       end
 
-      it "should give the correct score"
+      it "should give the correct score" do
+        @tournament.players[1].score.should == 1
+        @tournament.players[2].score.should == 0
+      end
     end
   end
 end

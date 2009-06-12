@@ -5,6 +5,11 @@ module Tournament
     def self.load raw
       tournament = Tournament.new raw['name'], raw['rounds']
       raw['players'].each { |praw| tournament.add_player Player.load(praw) }
+      raw['games'].each do |round|
+        round.each do |game|
+          tournament.players[game['white']['ip']].score += 1
+        end
+      end
       tournament
     end
 

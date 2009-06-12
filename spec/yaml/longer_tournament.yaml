@@ -1,4 +1,5 @@
 name: Test Tournament
+description: This is a test tournament.
 rounds: 3
 
 players:

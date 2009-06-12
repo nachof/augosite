@@ -38,6 +38,7 @@ describe 'Tournament' do
         @tournament.name.should == 'Test Tournament'
         @tournament.rounds.should == 3
         @tournament.players.should have(5).elements
+        @tournament.description.should == "This is a test tournament."
       end
 
       it "should give the correct score" do

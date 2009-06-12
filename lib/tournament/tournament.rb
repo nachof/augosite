@@ -1,9 +1,9 @@
 module Tournament
   class Tournament
-    attr_reader :id, :name, :rounds, :players
+    attr_reader :id, :name, :description, :rounds, :players
 
     def self.load raw, id
-      tournament = Tournament.new id, raw['name'], raw['rounds']
+      tournament = Tournament.new id, raw['name'], raw['description'], raw['rounds']
       raw['players'].each { |praw| tournament.add_player Player.load(praw) }
       raw['games'].each do |round|
         round.each do |game|
@@ -21,11 +21,12 @@ module Tournament
       tournament
     end
 
-    def initialize id, name, rounds
-      @id      = id
-      @name    = name
-      @rounds  = rounds
-      @players = {}
+    def initialize id, name, description, rounds
+      @id          = id
+      @name        = name
+      @description = description
+      @rounds      = rounds
+      @players     = {}
     end
 
     def add_player player

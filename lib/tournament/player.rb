@@ -1,6 +1,6 @@
 module Tournament
   class Player
-    attr_accessor :ip, :name, :score
+    attr_accessor :ip, :name
 
     def self.load raw
       new raw['ip'], raw['name']
@@ -9,12 +9,15 @@ module Tournament
     def initialize ip, name
       @ip = ip
       @name = name
-      @score = 0
       @games = []
     end
 
     def add_game g
       @games << g
+    end
+
+    def score
+      @games.select(&:won).count
     end
 
     def sos
@@ -27,6 +30,17 @@ module Tournament
 
     def sodos
       @games.select(&:won).collect(&:opponent).collect(&:score).inject(0, &:+)
+    end
+  end
+
+  class Nobody
+    # Bye pseudoopponent
+    def self.score
+      0
+    end
+
+    def self.sos
+      0
     end
   end
 end

@@ -37,5 +37,9 @@ module Tournament
     def add_player player
       @players[player.ip] = player
     end
+
+    def sorted_players
+      @players.values
+    end
   end
 end

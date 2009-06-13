@@ -27,6 +27,12 @@ describe 'Tournament' do
         @tournament.players[1].score.should == 1
         @tournament.players[2].score.should == 0
       end
+
+      it "sorted_players should return the players in the correct order" do
+        pls = @tournament.sorted_players
+        pls[0].name.should == 'Test One'
+        pls[1].name.should == 'Test Two'
+      end
     end
     describe 'five players player tournament, five rounds' do
       before do

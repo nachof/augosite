@@ -1,5 +1,6 @@
 require File.join(File.dirname(__FILE__), 'tournament', 'tournament')
 require File.join(File.dirname(__FILE__), 'tournament', 'player')
+require File.join(File.dirname(__FILE__), 'tournament', 'game')
 
 require 'yaml'
 

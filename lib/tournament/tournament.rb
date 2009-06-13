@@ -16,8 +16,8 @@ module Tournament
             pw,pb = ['white','black'].collect { |c| tournament.players[game[c]['ip']] }
             pw.score += 1 if winner == 'W'
             pb.score += 1 if winner == 'B'
-            pw.add_opponent(pb)
-            pb.add_opponent(pw)
+            pw.add_game(Game.new(pb, (winner == 'W')))
+            pb.add_game(Game.new(pw, (winner == 'B')))
           end
         end
       end

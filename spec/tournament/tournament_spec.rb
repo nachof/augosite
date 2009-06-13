@@ -76,6 +76,14 @@ describe 'Tournament' do
         @tournament.players[5].sos.should == 4
       end
 
+      it "should calculate the sodos" do
+        @tournament.players[1].sodos.should == 4
+        @tournament.players[2].sodos.should == 0
+        @tournament.players[3].sodos.should == 0
+        @tournament.players[4].sodos.should == 1
+        @tournament.players[5].sodos.should == 1
+      end
+
       it "should calculate the sosos" do
         @tournament.players[1].sosos.should == 13
         @tournament.players[2].sosos.should == 8

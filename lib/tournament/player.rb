@@ -10,6 +10,15 @@ module Tournament
       @ip = ip
       @name = name
       @score = 0
+      @opponents = []
+    end
+
+    def add_opponent o
+      @opponents << o
+    end
+
+    def sos
+      @opponents.collect(&:score).inject(&:+)
     end
   end
 end

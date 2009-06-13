@@ -33,7 +33,13 @@ describe 'Tournament' do
         pls[0].name.should == 'Test One'
         pls[1].name.should == 'Test Two'
       end
+
+      it "should calculate the sos" do
+        @tournament.players[1].sos.should == 0
+        @tournament.players[2].sos.should == 1
+      end
     end
+
     describe 'five players player tournament, five rounds' do
       before do
         @longer = File.read File.join(TEST_FILES_DIR, 'longer_tournament.yaml')

@@ -83,6 +83,10 @@ describe 'Tournament' do
         @tournament.players[4].sosos.should == 13
         @tournament.players[5].sosos.should == 8
       end
+
+      it "sorted_players should return the players in the correct order" do
+        @tournament.sorted_players.collect(&:ip).should == [1, 4, 5, 3, 2]
+      end
     end
   end
 end

@@ -42,7 +42,12 @@ module Tournament
     end
 
     def sorted_players
-      @players.values
+      @players.values.sort do |a,b|
+        criteria = [:score] + @tiebreaks + [:ip] # first score, tehn the tiebreaks, then ip
+        values_a = criteria.collect { |c| a.send(c) }
+        values_b = criteria.collect { |c| b.send(c) }
+        values_b <=> values_a
+      end
     end
   end
 end

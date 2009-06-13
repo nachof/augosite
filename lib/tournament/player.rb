@@ -20,5 +20,9 @@ module Tournament
     def sos
       @opponents.collect(&:score).inject(&:+)
     end
+
+    def sosos
+      @opponents.collect(&:sos).inject(&:+)
+    end
   end
 end

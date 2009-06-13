@@ -38,6 +38,11 @@ describe 'Tournament' do
         @tournament.players[1].sos.should == 0
         @tournament.players[2].sos.should == 1
       end
+
+      it "should calculate the sosos" do
+        @tournament.players[1].sosos.should == 1
+        @tournament.players[2].sosos.should == 0
+      end
     end
 
     describe 'five players player tournament, five rounds' do
@@ -69,6 +74,14 @@ describe 'Tournament' do
         @tournament.players[3].sos.should == 4
         @tournament.players[4].sos.should == 4
         @tournament.players[5].sos.should == 4
+      end
+
+      it "should calculate the sosos" do
+        @tournament.players[1].sosos.should == 13
+        @tournament.players[2].sosos.should == 8
+        @tournament.players[3].sosos.should == 8
+        @tournament.players[4].sosos.should == 13
+        @tournament.players[5].sosos.should == 8
       end
     end
   end

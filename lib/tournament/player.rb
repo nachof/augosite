@@ -46,9 +46,14 @@ module Tournament
 
   class Nobody
     # Bye pseudoopponent
-    def self.score; 0;     end
-    def self.sos;   0;     end
+    def self.score; 0;  end
+    def self.sos;   0;  end
+    def self.ip;    ''; end
+    def self.name;  ''; end
+  end
+
+  class ByeNobody < Nobody
+    # Bye pseudoopponent
     def self.ip;    'Bye'; end
-    def self.name;  '';    end
   end
 end

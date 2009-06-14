@@ -119,6 +119,13 @@ describe 'Tournament' do
         @tournament.players[4].rounds[3].result.should == 'W+R'
         @tournament.players[1].rounds[2].color.should == 'B'
       end
+
+      it "info for unplayed round" do
+        @tournament.players[2].rounds[3].opponent.should == Tournament::Nobody
+        @tournament.players[2].rounds[3].won.should == false
+        @tournament.players[2].rounds[3].result.should == ''
+        @tournament.players[2].rounds[3].color.should == ''
+      end
     end
   end
 end

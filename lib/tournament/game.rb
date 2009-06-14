@@ -12,9 +12,17 @@ module Tournament
 
   class ByeRound
     # Bye pseudo game
-    def self.opponent; Nobody; end
+    def self.opponent; ByeNobody; end
     def self.won; true; end
     def self.result; 'Bye'; end
+    def self.color; ''; end
+  end
+
+  class UnplayedRound
+    # Bye pseudo game
+    def self.opponent; Nobody; end
+    def self.won; false; end
+    def self.result; ''; end
     def self.color; ''; end
   end
 end

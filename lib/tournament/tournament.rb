@@ -10,8 +10,10 @@ module Tournament
         roundnum += 1
         round.each do |game|
           if game['white'].nil?
-            unless game['bye'].nil?
+            if not game['bye'].nil?
               tournament.players[game['bye']['ip']].add_game(roundnum, ByeRound)
+            elsif not game['quit'].nil?
+              tournament.players[game['quit']['ip']].add_game(roundnum, UnplayedRound)
             end
           else
             winner = game['result'].split('+')[0]

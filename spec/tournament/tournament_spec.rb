@@ -48,10 +48,12 @@ describe 'Tournament' do
         @tournament.players[1].rounds[1].opponent.should == @tournament.players[2]
         @tournament.players[1].rounds[1].won.should == true
         @tournament.players[1].rounds[1].result.should == "W+R"
+        @tournament.players[1].rounds[1].color.should == "W"
 
         @tournament.players[2].rounds[1].opponent.should == @tournament.players[1]
         @tournament.players[2].rounds[1].won.should == false
         @tournament.players[2].rounds[1].result.should == "W+R"
+        @tournament.players[2].rounds[1].color.should == "B"
       end
     end
 
@@ -110,10 +112,12 @@ describe 'Tournament' do
         @tournament.players[1].rounds[2].opponent.ip.should == 5
         @tournament.players[1].rounds[2].won.should == true
         @tournament.players[1].rounds[2].result.should == 'B+R'
+        @tournament.players[1].rounds[2].color.should == 'B'
 
         @tournament.players[4].rounds[3].opponent.ip.should == 1
         @tournament.players[4].rounds[3].won.should == false
         @tournament.players[4].rounds[3].result.should == 'W+R'
+        @tournament.players[1].rounds[2].color.should == 'B'
       end
     end
   end

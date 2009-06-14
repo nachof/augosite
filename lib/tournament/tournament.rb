@@ -16,8 +16,8 @@ module Tournament
           else
             winner = game['result'].split('+')[0]
             pw,pb = ['white','black'].collect { |c| tournament.players[game[c]['ip']] }
-            pw.add_game(roundnum, Game.new(pb, (winner == 'W'), game['result']))
-            pb.add_game(roundnum, Game.new(pw, (winner == 'B'), game['result']))
+            pw.add_game(roundnum, Game.new(pb, (winner == 'W'), game['result'], 'W'))
+            pb.add_game(roundnum, Game.new(pw, (winner == 'B'), game['result'], 'B'))
           end
         end
       end

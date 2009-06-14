@@ -1,5 +1,6 @@
 name: Test Tournament
 rounds: 1
+tiebreak: sos, sosos
 
 players:
   - &test1

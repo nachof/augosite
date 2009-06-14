@@ -25,7 +25,7 @@ module Tournament
     end
 
     def self.tbparts tiebreaks
-      (tiebreaks || '').split(',').map(&:to_sym)
+      (tiebreaks || '').split(',').map { |t| t.strip.to_sym }
     end
 
     def initialize id, name, description, tiebreaks, rounds

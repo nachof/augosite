@@ -15,5 +15,6 @@ module Tournament
     def self.opponent; Nobody; end
     def self.won; true; end
     def self.result; 'Bye'; end
+    def self.color; ''; end
   end
 end

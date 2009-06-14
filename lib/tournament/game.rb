@@ -1,10 +1,11 @@
 module Tournament
   class Game
-    attr_reader :opponent, :won
+    attr_reader :opponent, :won, :result
 
-    def initialize opponent, won
+    def initialize opponent, won, result
       @opponent = opponent
-      @won = won
+      @won      = won
+      @result   = result
     end
   end
 end

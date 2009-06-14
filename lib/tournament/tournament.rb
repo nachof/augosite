@@ -11,13 +11,13 @@ module Tournament
         round.each do |game|
           if game['white'].nil?
             unless game['bye'].nil?
-              tournament.players[game['bye']['ip']].add_game(roundnum, Game.new(Nobody, true))
+              tournament.players[game['bye']['ip']].add_game(roundnum, Game.new(Nobody, true, 'Bye'))
             end
           else
             winner = game['result'].split('+')[0]
             pw,pb = ['white','black'].collect { |c| tournament.players[game[c]['ip']] }
-            pw.add_game(roundnum, Game.new(pb, (winner == 'W')))
-            pb.add_game(roundnum, Game.new(pw, (winner == 'B')))
+            pw.add_game(roundnum, Game.new(pb, (winner == 'W'), game['result']))
+            pb.add_game(roundnum, Game.new(pw, (winner == 'B'), game['result']))
           end
         end
       end

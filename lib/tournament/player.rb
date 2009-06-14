@@ -53,5 +53,9 @@ module Tournament
     def self.sos
       0
     end
+
+    def self.ip
+      'Bye'
+    end
   end
 end

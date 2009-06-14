@@ -8,4 +8,11 @@ module Tournament
       @result   = result
     end
   end
+
+  class ByeRound
+    # Bye pseudo game
+    def self.opponent; Nobody; end
+    def self.won; true; end
+    def self.result; 'Bye'; end
+  end
 end

@@ -5,17 +5,19 @@ module Tournament
     def self.load raw, id
       tournament = Tournament.new id, raw['name'], raw['description'], tbparts(raw['tiebreak']), raw['rounds']
       raw['players'].each { |praw| tournament.add_player Player.load(praw) }
+      roundnum = 0
       raw['games'].each do |round|
+        roundnum += 1
         round.each do |game|
           if game['white'].nil?
             unless game['bye'].nil?
-              tournament.players[game['bye']['ip']].add_game(Game.new(Nobody, true))
+              tournament.players[game['bye']['ip']].add_game(roundnum, Game.new(Nobody, true))
             end
           else
             winner = game['result'].split('+')[0]
             pw,pb = ['white','black'].collect { |c| tournament.players[game[c]['ip']] }
-            pw.add_game(Game.new(pb, (winner == 'W')))
-            pb.add_game(Game.new(pw, (winner == 'B')))
+            pw.add_game(roundnum, Game.new(pb, (winner == 'W')))
+            pb.add_game(roundnum, Game.new(pw, (winner == 'B')))
           end
         end
       end

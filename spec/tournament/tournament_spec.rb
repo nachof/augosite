@@ -43,6 +43,13 @@ describe 'Tournament' do
         @tournament.players[1].sosos.should == 1
         @tournament.players[2].sosos.should == 0
       end
+
+      it "should give the round information" do
+        @tournament.players[1].rounds[1].opponent.should == @tournament.players[2]
+        @tournament.players[1].rounds[1].won.should == true
+        @tournament.players[2].rounds[1].opponent.should == @tournament.players[1]
+        @tournament.players[2].rounds[1].won.should == false
+      end
     end
 
     describe 'five players player tournament, five rounds' do
@@ -94,6 +101,13 @@ describe 'Tournament' do
 
       it "sorted_players should return the players in the correct order" do
         @tournament.sorted_players.collect(&:ip).should == [1, 4, 5, 3, 2]
+      end
+
+      it "should give the info for the rounds" do
+        @tournament.players[1].rounds[2].opponent.ip.should == 5
+        @tournament.players[1].rounds[2].won.should == true
+        @tournament.players[4].rounds[3].opponent.ip.should == 1
+        @tournament.players[4].rounds[3].won.should == false
       end
     end
   end

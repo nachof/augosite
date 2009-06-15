@@ -59,9 +59,9 @@ games:
   - 
     - 
       # Verify
-      white: *alfonso
-      black: *martin
-      result: B+R
+      white: *martin
+      black: *alfonso
+      result: W+R
     - 
       white: *nacho
       black: *gustavo

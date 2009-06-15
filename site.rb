@@ -29,6 +29,10 @@ get '/torneos' do
   haml :torneos, :locals => { :tournaments => Tournament.load_dir(AUGO.data_path('torneos')) }
 end
 
+get '/sgf/:tournament_id/:game' do
+  haml :sgfview, :locals => { :sgffile => "/partidas/#{params[:tournament_id]}/#{params[:game]}.sgf" }, :layout => false
+end
+
 get '/:anypage' do
   haml params[:anypage].to_sym
 end

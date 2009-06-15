@@ -1,0 +1,25 @@
+%link{ :rel => 'stylesheet', :type => 'text/css', :href => '/sgfview.css', :media => 'screen' }
+
+%script{ :language => 'javascript' }
+  eidogoConfig = {
+  theme:          "compact", // "standard" or "compact"
+  mode:           "play", // "play" or "view"
+  playerPath:      "/player",
+  showComments:    true,
+  showPlayerInfo:  false,
+  showGameInfo:    false,
+  showTools:       false,
+  showOptions:     false,
+  markCurrent:     true,
+  markVariations:  true,
+  markNext:        false,
+  problemMode:     false,
+  enableShortcuts: false
+  };
+
+= javascript :eidogo_player
+  
+%div.eidogo-player-auto{ :sgf => sgffile }
+  loading
+
+%a{ :href => sgffile, :target => '_top' } Descargar SGF

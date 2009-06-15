@@ -2,7 +2,7 @@
 
 %h3 Detalles
 %p= tournament.description
-= javascript :highlight
+= javascript :highlight, :load_game
 
 %h3 Resultados
 
@@ -25,4 +25,4 @@
         - tournament.tiebreaks.each do |tb|
           %td.points= player.send(tb)
         - 1.upto(tournament.rounds) do |rnum|
-          = round_td player.rounds[rnum]
+          = round_td tournament, player, player.rounds[rnum]

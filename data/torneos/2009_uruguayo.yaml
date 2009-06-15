@@ -23,10 +23,10 @@ players:
     name: Bruno
     ip: 6
   - &gabriel
-    name: Gabriel
+    name: Gabriel Arioni
     ip: 7
   - &mauri
-    name: Mauricio
+    name: Mauricio Achigar
     ip: 8
   - &gustavo
     name: Gustavo Olaza

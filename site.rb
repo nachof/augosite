@@ -4,7 +4,7 @@ require 'sinatra'
 require 'helpers'
 
 get '/:stylesheet.css' do
-  header "Content-Type" => "text/css"
+  response.headers["Content-Type"] = "text/css"
   sass params[:stylesheet].to_sym
 end
 

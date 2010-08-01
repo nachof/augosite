@@ -1,0 +1,135 @@
+name: Campeonato Uruguayo de Go, 2010
+rounds: 5
+
+tiebreak: sos,sosos
+
+players:
+  - &martin
+    name: Martín Benenati
+    ip: 1
+  - &alfonso
+    name: Alfonso Artigue
+    ip: 2
+  - &alvaro
+    name: Álvaro Rittatore
+    ip: 3
+  - &nacho
+    name: Nacho Facello
+    ip: 4
+  - &ale
+    name: Alejandro Jarovisky
+    ip: 5
+  - &bruno
+    name: Bruno Fleischer
+    ip: 6
+  - &illa
+    name: Gabriel Illanes
+    ip: 7
+  - &gabriel
+    name: Gabriel Arioni
+    ip: 8
+  - &gustavo
+    name: Gustavo Olaza
+    ip: 9
+
+games:
+  # Primera ronda
+  -
+    -
+      black: *martin
+      white: *bruno
+      result: B+R
+    -
+      black: *alfonso
+      white: *illa
+      result: B+R
+    -
+      black: *alvaro
+      white: *gabriel
+      result: B+R
+    -
+      bye: *nacho
+    -
+      black: *ale
+      white: *gustavo
+      result: B+R
+  # Segunda ronda
+  -
+    -
+      black: *martin
+      white: *alvaro
+      result: B+R
+    -
+      black: *nacho
+      white: *alfonso
+      result: W+R
+    -
+      black: *ale
+      white: *bruno
+      result: W+R
+    -
+      bye: *illa
+    -
+      black: *gabriel
+      white: *gustavo
+      result: B+R
+  # Tercera ronda
+  -
+    -
+      black: *martin
+      white: *alfonso
+      result: B+R
+    -
+      black: *alvaro
+      white: *illa
+      result: W+R
+    -
+      black: *ale
+      white: *nacho
+      result: W+0.5
+    -
+      bye: *gustavo
+    -
+      black: *bruno
+      white: *gabriel
+      result: B+R
+  # Cuarta ronda
+  -
+    -
+      black: *martin
+      white: *nacho
+      result: B+R
+    -
+      black: *alfonso
+      white: *bruno
+      result: B+R
+    -
+      black: *alvaro
+      white: *gustavo
+      result: B+R
+    -
+      bye: *gabriel
+    -
+      black: *ale
+      white: *illa
+      result: W+4.5
+  # Quinta ronda
+  -
+    -
+      black: *martin
+      white: *illa
+      result: B+R
+    -
+      black: *alfonso
+      white: *alvaro
+      result: B+R
+    -
+      black: *nacho
+      white: *gabriel
+      result: B+16.5
+    -
+      bye: *ale
+    -
+      black: *bruno
+      white: *gustavo
+      result: B+R
